@@ -34,22 +34,20 @@
                     Art Nouveau
                 </div>
 
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+@foreach ($exhibits as $e)
+                  <div class="card mb-2" style="width: 20rem;">
+                    <img class="card-img-top" src="{{ $e->url }}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ $e->piece_name }}</h5>
+                      <h6 class="card-subtitle mt-3 mb-3">{{ $e->artist_name }}</h6>
+                      <h6 class="card-subtitle">{{ $e->year }}</h6>
+                    </div>
+                    <p class="card-text text-center">{{ $e->description }}</p>
+                    <div class="card-body">
+                      <a href="/exhibits/{{ $e->id }}/edit" class="card-link">Edit</a>
+                    </div>
                   </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                  </ul>
-                  <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                  </div>
-                </div>
+@endforeach
 
             </div>
         </div>

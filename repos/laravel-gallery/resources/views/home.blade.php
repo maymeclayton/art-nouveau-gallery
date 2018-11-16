@@ -13,8 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    Create; Edit; Delete
+                    
+                    <a href="exhibits/create">Create an Exhibit</a>
+                    <br>
+                    <a href="/exhibits/{{ $e->id }}/edit">Delete an Exhibit</a>
                 </div>
             </div>
         </div>

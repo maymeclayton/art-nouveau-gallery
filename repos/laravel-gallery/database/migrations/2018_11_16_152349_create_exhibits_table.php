@@ -18,7 +18,7 @@ class CreateExhibitsTable extends Migration
             $table->string('piece_name');
             $table->year('year');
             $table->string('artist_name');
-            $table->string('url', 125);
+            $table->string('url');
             $table->text('description');
             $table->timestamps();
         });

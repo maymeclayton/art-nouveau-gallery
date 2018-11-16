@@ -12,10 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $exhibits = \App\Exhibit::get();
+    return view('welcome', compact('exhibits'));
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/exhibits', 'ExhibitController@index');
+Route::resource('/exhibits', 'ExhibitController');

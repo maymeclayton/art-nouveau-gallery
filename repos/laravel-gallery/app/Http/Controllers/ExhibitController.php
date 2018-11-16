@@ -13,7 +13,8 @@ class ExhibitController extends Controller
      */
     public function index()
     {
-        return "this is an index page";
+        $exhibits = \App\Exhibit::get();
+        return view('welcome', compact('exhibits'));
     }
 
     /**
@@ -23,7 +24,7 @@ class ExhibitController extends Controller
      */
     public function create()
     {
-        return "this is a page to create an exhibit";
+        return view('exhibits.create');
     }
 
     /**
@@ -34,7 +35,16 @@ class ExhibitController extends Controller
      */
     public function store(Request $request)
     {
-        return "this is the store page";
+        $e = new \App\Exhibit;
+        $e->piece_name=$request->input('piece_name');
+        $e->year=$request->input('year');
+        $e->artist_name=$request->input('artist_name');
+        $e->url=$request->input('url');
+        $e->description=$request->input('description');
+        $e->save();
+
+        return redirect()->route('exhibits.index');
+
     }
 
     /**
@@ -45,7 +55,7 @@ class ExhibitController extends Controller
      */
     public function show($id)
     {
-        return "this is the show page";
+        return redirect('/exhibits');
     }
 
     /**
@@ -56,7 +66,10 @@ class ExhibitController extends Controller
      */
     public function edit($id)
     {
-        return "this page allows you to edit an exhibit";
+      $e=\App\Exhibit::find($id);
+
+
+        return view('exhibits.edit', compact('e'));
     }
 
     /**
@@ -68,7 +81,16 @@ class ExhibitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return "this is the update page";
+        $e=\App\Exhibit::find($id);
+
+        $e->piece_name=$request->input('new_piece_name');
+        $e->year=$request->input('new_year');
+        $e->artist_name=$request->input('new_artist_name');
+        $e->url=$request->input('new_url');
+        $e->description=$request->input('new_description');
+        $e->save();
+
+        return redirect('/exhibits');
     }
 
     /**
@@ -77,8 +99,11 @@ class ExhibitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        return "this page lets you delete";
+        $e=\App\Exhibit::find($id);
+        $e->delete();
+
+        return redirect()->route('exhibits.index');
     }
 }
