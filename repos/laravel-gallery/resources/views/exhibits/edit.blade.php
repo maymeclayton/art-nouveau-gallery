@@ -36,7 +36,7 @@
               <textarea class="form-control" name="new_description" id="new_description" placeholder="Description...">{{ $e->description }}</textarea>
           </div>
           <button type="submit" class="ml-2 btn btn-warning float-right">Update</button>
-          <button type="submit" class="ml-2 btn btn-warning float-right" >Delete</button>
+          <a href="/exhibits/{{ $e->id }}/delete" class="btn btn-secondary float-right ml-2">Delete</a>
           <a href="/exhibits" class="btn btn-secondary float-right">Cancel</a>
         </div>
         </form>

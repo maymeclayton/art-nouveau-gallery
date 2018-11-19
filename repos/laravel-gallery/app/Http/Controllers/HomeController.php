@@ -23,8 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $e = \App\Exhibit::get();
-
-        return view('home', compact('e'));
+        return view('home');
     }
 }

@@ -30,12 +30,10 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Art Nouveau
-                </div>
+              <h1 class="mb-5 mt-3"> Art Nouveau </h1>
 
 @foreach ($exhibits as $e)
-                  <div class="card mb-2" style="width: 20rem;">
+                  <div class="card mb-2" style="width: 40rem;">
                     <img class="card-img-top" src="{{ $e->url }}" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{ $e->piece_name }}</h5>
@@ -43,8 +41,9 @@
                       <h6 class="card-subtitle">{{ $e->year }}</h6>
                     </div>
                     <p class="card-text text-center">{{ $e->description }}</p>
-                    <div class="card-body">
-                      <a href="/exhibits/{{ $e->id }}/edit" class="card-link">Edit</a>
+                    <p class="card-text text-left">{{ $e->created_at }}</p>
+                    <div class="card-body text-center">
+                      <a href="/exhibits/{{ $e->id }}/edit" class="card-link mr-3">Edit</a>
                     </div>
                   </div>
 @endforeach

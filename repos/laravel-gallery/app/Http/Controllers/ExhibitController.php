@@ -106,4 +106,13 @@ class ExhibitController extends Controller
 
         return redirect()->route('exhibits.index');
     }
+
+    public function confirmDelete(Request $request, $id)
+    {
+        $e=\App\Exhibit::find($id);
+
+        $request->session()->flash('status', "Are you sure you want to Delete this exhibit?");
+
+        return view ('exhibits.delete', compact('e'));
+    }
 }
