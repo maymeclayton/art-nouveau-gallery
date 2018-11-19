@@ -29,19 +29,19 @@
                 </div>
             @endif
 
-            <div class="content">
-              <h1 class="mb-5 mt-3"> Art Nouveau </h1>
+            <div class="content content-center">
+              <h1 class="mb-5 mt-3 text-white"> Art Nouveau </h1>
 
 @foreach ($exhibits as $e)
-                  <div class="card mb-2" style="width: 40rem;">
-                    <img class="card-img-top" src="{{ $e->url }}" alt="Card image cap">
+                  <div class="card mb-5 border-0 bg-muted">
+                    <img class="card-img-top mx-auto mt-3" src="{{ $e->url }}" alt="piece entitled: {{ $e->piece_name }}">
                     <div class="card-body">
                       <h5 class="card-title">{{ $e->piece_name }}</h5>
                       <h6 class="card-subtitle mt-3 mb-3">{{ $e->artist_name }}</h6>
                       <h6 class="card-subtitle">{{ $e->year }}</h6>
                     </div>
-                    <p class="card-text text-center">{{ $e->description }}</p>
-                    <p class="card-text text-left">{{ $e->created_at }}</p>
+                    <p class="card-text ml-3 mr-3">{{ $e->description }}</p>
+                    <p class="card-text ml-3 mr-3">{{ $e->created_at }}</p>
                     <div class="card-body text-center">
                       <a href="/exhibits/{{ $e->id }}/edit" class="card-link mr-3">Edit</a>
                     </div>
