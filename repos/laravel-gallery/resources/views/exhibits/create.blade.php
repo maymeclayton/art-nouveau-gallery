@@ -27,7 +27,7 @@
         <label for="description" class="font-weight-bold">Description</label>
         <textarea class="form-control" name="description" id="description" placeholder="Description..."></textarea>
     </div>
-    <button type="submit" class="ml-2 btn btn-warning float-right">Update</button>
+    <button type="submit" class="ml-2 btn btn-warning float-right">Create</button>
     <a href="/exhibits" class="btn btn-secondary float-right">Cancel</a>
   </div>
 

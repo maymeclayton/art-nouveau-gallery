@@ -30,7 +30,17 @@
             @endif
 
             <div class="content content-center">
-              <h1 class="mb-5 mt-3 text-white"> Art Nouveau </h1>
+              <h1 class="mb-5 mt-3 text-white"> Art Nouveau: 1890-1910</h1>
+
+              <div class="card mb-5 text-center">
+                <p class="card-text mt-4">Welcome to Art Nouveau! This site is an exhibition of all things Art Nouveau: design,
+                  architecture, decorative arts. Browse the exhibits below, create an account to add additional gallery exhibits or edit
+                  existing ones. Enjoy your visit and come back soon!</p>
+                <div class="card-body">"All art is but imitation of nature"</h5>
+                  <p class="card-text">-Lucius Annaeus Seneca.</p>
+
+                </div>
+              </div>
 
 @foreach ($exhibits as $e)
                   <div class="card mb-5 border-0 bg-muted">
